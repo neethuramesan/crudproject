@@ -1,0 +1,37 @@
+<html>
+    <head>
+    </head>
+    <body style="background-color: #c2d6d6">
+        <center>
+        <h1>Employee Details....</h1>
+        
+        <table border="2px">
+            <thead>
+             <tr>
+                <th>EMPLOYEE ID</th>
+                <th>EMPLOYEE NAME</th>
+                <th>DEPARTMENT</th>
+                <th>AGE</th>
+                <th>EMAIL ID</th>
+                <th>CONTACT NUMBER</th>
+             </tr>
+           </thead>
+           <tbody>
+               {% for e in emp %}
+               <tr>
+                   <td>{{e.id}}</td>
+                   <td>{{e.employee_name}}</td>
+                   <td>{{e.department}}</td>
+                   <td>{{e.age}}</td>
+                   <td>{{e.email}}</td>
+                   <td>{{e.contact_number}}</td>
+                   <td><a href="{% url 'editpage' e.id %}">Edit</a><br>
+                   <td><a href="{% url 'deletepage' e.id %}">Delete</a><br>
+               </tr>
+                {% endfor %}
+           </tbody>
+        </center>
+        </table>
+    </body>
+    </html>
+

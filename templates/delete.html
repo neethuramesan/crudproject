@@ -1,0 +1,12 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <form method="post" action="{% url 'delete_employee' emp.id %}">
+            {% csrf_token %}
+            <p>Are you sure want to delete <strong>'{{emp.employee_name}}'</strong><p>
+                <a href="{% url 'show_employee_details' %}">Go Back</a>
+                <input type="submit" value="Confirm">
+        </form>
+    </body>
+    </html>

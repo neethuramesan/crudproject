@@ -1,0 +1,53 @@
+<html>
+    <head>
+        {% load static %}
+        <style>
+            tr,td{
+                height:40px;
+                width:200px;
+            }
+
+           #bg{background-repeat:no-repeat;
+            background-size:cover;
+           }
+            
+        </style>
+    </head>
+    <body id="bg" style="background-image: url('{% static "images/emp.jpg"%}')";>
+    <center>
+        <br><br><br><br>
+        <h1><strong><u>REGISTRATION</u></strong></h1>
+        <table>
+        <form action="{% url 'add_employee' %}" method="post">
+            {% csrf_token %}
+            <tr>
+            <td><label style="font-size:23px;">Employee Name</label></td>
+            <td><input type="text" name="employee_name"></td>
+            </tr>
+            <tr>
+            <td><label style="font-size:23px;">Department</label></td>
+            <td><input type="text" name="employee_dept"></td>
+            </tr>
+            <tr>
+            <td><label style="font-size:23px;">Age</label></td>
+            <td><input type="text" name="employee_age"></td>
+            </tr>
+            <tr>
+            <td><label style="font-size:23px;">Email</label></td>
+            <td><input type="text" name="employee_email"></td>
+            </tr>
+            <tr>
+            <td><label style="font-size:23px;">Contact Number</label></td>
+            <td><input type="text" name="contact_num"></td>
+            </tr>
+            <tr>
+                <td></td>
+            <td>
+            <Button type="submit">Submit</Button>
+            </td>
+            </tr>
+        </form>
+        </table>
+    </center>
+    </body>
+</html>
